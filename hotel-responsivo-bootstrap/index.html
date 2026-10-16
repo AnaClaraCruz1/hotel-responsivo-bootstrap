@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Conheça o Hotel Aurora: conforto, café da manhã e praticidade para sua estadia.">
+  <title>Hotel Aurora | Sua estadia com conforto</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio" aria-label="Hotel Aurora - início">
+          <span class="brand-mark"><i class="bi bi-sun-fill" aria-hidden="true"></i></span>
+          <span>HOTEL <strong>AURORA</strong></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu de navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+            <li class="nav-item"><a class="nav-link" href="#beneficios">Por que escolher</a></li>
+            <li class="nav-item"><a class="nav-link" href="#quartos">Nossos quartos</a></li>
+            <li class="nav-item"><a class="btn btn-primary rounded-pill px-4" href="#reserva">Faça sua reserva</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section py-5" id="inicio">
+      <div class="container">
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-12 col-lg-5">
+            <div class="hero-copy">
+              <span class="eyebrow">HOSPITALIDADE QUE ACOLHE</span>
+              <h1>Sinta o conforto acolhedor das nossas hospedagens</h1>
+              <p class="lead">Hospede-se no Hotel Aurora e aproveite quartos aconchegantes a partir de <strong>R$ 100,00</strong> a diária.</p>
+              <a class="btn btn-primary rounded-pill px-4 py-2 mt-2" href="#quartos">Conheça nossos quartos <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="col-12 col-lg-7">
+            <img class="img-fluid hero-image" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=85"
+              alt="Piscina e área externa de um hotel acolhedor">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-section py-5" id="beneficios">
+      <div class="container">
+        <div class="text-center mb-4 mb-lg-5">
+          <span class="eyebrow">SUA ESTADIA, NOSSO CUIDADO</span>
+          <h2 class="section-title">Por que se hospedar em nossos hotéis?</h2>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-12 col-md-6 col-lg-5">
+            <div class="benefit-item">
+              <div class="benefit-icon"><i class="bi bi-cup-hot-fill" aria-hidden="true"></i></div>
+              <div>
+                <h3>Delicioso café da manhã</h3>
+                <p>Incluído em todas as diárias</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-5">
+            <div class="benefit-item">
+              <div class="benefit-icon"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i></div>
+              <div>
+                <h3>Fácil acesso</h3>
+                <p>Perto dos principais pontos turísticos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rooms-section py-5" id="quartos">
+      <div class="container">
+        <div class="text-center mb-4">
+          <span class="eyebrow">DESCANSE COM TRANQUILIDADE</span>
+          <h2 class="section-title">Nossos quartos</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-12 col-md-4">
+            <article class="card room-card h-100">
+              <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=80" class="card-img-top" alt="Quarto confortável com cama de solteiro">
+              <div class="card-body text-center">
+                <h3 class="card-title">Suíte Solteiro</h3>
+                <p class="room-description">Praticidade e conforto para sua viagem individual.</p>
+                <p class="room-price">A partir de <strong>R$ 100,00</strong></p>
+                <a href="#reserva" class="btn btn-outline-primary rounded-pill px-4">Consultar</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-4">
+            <article class="card room-card h-100">
+              <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=900&q=80" class="card-img-top" alt="Suíte de casal com decoração acolhedora">
+              <div class="card-body text-center">
+                <h3 class="card-title">Suíte Casal</h3>
+                <p class="room-description">Um ambiente acolhedor para compartilhar bons momentos.</p>
+                <p class="room-price">A partir de <strong>R$ 150,00</strong></p>
+                <a href="#reserva" class="btn btn-outline-primary rounded-pill px-4">Consultar</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-4">
+            <article class="card room-card h-100">
+              <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=80" class="card-img-top" alt="Suíte ampla com cama confortável e iluminação suave">
+              <div class="card-body text-center">
+                <h3 class="card-title">Suíte Master</h3>
+                <p class="room-description">Mais espaço e comodidade para relaxar durante a estadia.</p>
+                <p class="room-price">A partir de <strong>R$ 220,00</strong></p>
+                <a href="#reserva" class="btn btn-outline-primary rounded-pill px-4">Consultar</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-section py-5" id="reserva">
+      <div class="container">
+        <div class="booking-panel">
+          <div class="row g-4 g-lg-5 align-items-start">
+            <div class="col-12 col-lg-4">
+              <span class="eyebrow">VAMOS PLANEJAR SUA VIAGEM?</span>
+              <h2 class="section-title">Faça sua reserva</h2>
+              <p class="booking-intro">Entre em contato conosco informando as datas desejadas. Retornaremos com a disponibilidade e os detalhes da sua reserva.</p>
+              <p class="small text-secondary"><i class="bi bi-info-circle me-1" aria-hidden="true"></i>Este formulário é demonstrativo e não realiza uma reserva real.</p>
+            </div>
+            <div class="col-12 col-lg-8">
+              <form id="bookingForm" class="row g-3 needs-validation" novalidate>
+                <div class="col-12 col-md-6">
+                  <label for="nome" class="form-label">Nome completo</label>
+                  <input type="text" class="form-control" id="nome" name="nome" autocomplete="name" required>
+                  <div class="invalid-feedback">Informe seu nome.</div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="email" class="form-label">E-mail</label>
+                  <input type="email" class="form-control" id="email" name="email" autocomplete="email" required>
+                  <div class="invalid-feedback">Informe um e-mail válido.</div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="entrada" class="form-label">Data de entrada</label>
+                  <input type="date" class="form-control" id="entrada" name="entrada" required>
+                  <div class="invalid-feedback">Selecione a data de entrada.</div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="saida" class="form-label">Data de saída</label>
+                  <input type="date" class="form-control" id="saida" name="saida" required>
+                  <div class="invalid-feedback">A saída deve ser posterior à entrada.</div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="observacoes" class="form-label">Observações</label>
+                  <textarea class="form-control" id="observacoes" name="observacoes" rows="4" placeholder="Conte-nos se tem alguma necessidade especial."></textarea>
+                </div>
+                <div class="col-6 col-md-3">
+                  <label for="adultos" class="form-label">Adultos</label>
+                  <input type="number" class="form-control" id="adultos" name="adultos" min="1" max="20" value="1" required>
+                  <div class="invalid-feedback">Informe ao menos 1 adulto.</div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <label for="criancas" class="form-label">Crianças</label>
+                  <input type="number" class="form-control" id="criancas" name="criancas" min="0" max="20" value="0">
+                </div>
+                <div class="col-12 text-md-end">
+                  <button type="submit" class="btn btn-primary rounded-pill px-5 py-2">Enviar solicitação <i class="bi bi-send ms-2" aria-hidden="true"></i></button>
+                </div>
+                <div class="col-12">
+                  <div id="formMessage" class="alert d-none mb-0" role="status" aria-live="polite"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <p class="mb-0">© <span id="currentYear"></span> Hotel Aurora. Todos os direitos reservados.</p>
+      <p class="mb-0">Conforto, cuidado e hospitalidade.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JavaScript Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

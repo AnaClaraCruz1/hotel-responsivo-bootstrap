@@ -1,0 +1,176 @@
+/* Hotel Aurora - estilos personalizados
+   Bootstrap 5 é responsável pela grade e pelos principais comportamentos responsivos. */
+:root {
+  --color-primary: #2f665c;
+  --color-primary-dark: #214b43;
+  --color-accent: #d7b982;
+  --color-ink: #273632;
+  --color-muted: #66736e;
+  --color-soft: #f4f7f4;
+  --color-white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--color-ink);
+  background: var(--color-white);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+section { scroll-margin-top: 82px; }
+
+.navbar { min-height: 76px; }
+.navbar-brand {
+  color: var(--color-primary) !important;
+  letter-spacing: .06em;
+  font-size: .95rem;
+}
+.navbar-brand strong { font-weight: 800; }
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  color: var(--color-white);
+  background: var(--color-primary);
+  border-radius: 50%;
+  font-size: 1.15rem;
+}
+.nav-link { color: var(--color-ink); font-weight: 500; }
+.nav-link:hover, .nav-link:focus { color: var(--color-primary); }
+
+.btn-primary {
+  --bs-btn-bg: var(--color-primary);
+  --bs-btn-border-color: var(--color-primary);
+  --bs-btn-hover-bg: var(--color-primary-dark);
+  --bs-btn-hover-border-color: var(--color-primary-dark);
+  --bs-btn-active-bg: var(--color-primary-dark);
+  --bs-btn-active-border-color: var(--color-primary-dark);
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--color-primary);
+  --bs-btn-border-color: var(--color-primary);
+  --bs-btn-hover-bg: var(--color-primary);
+  --bs-btn-hover-border-color: var(--color-primary);
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #f6f8f4 0%, #edf3ef 100%);
+}
+.hero-copy { max-width: 540px; }
+.eyebrow {
+  display: inline-block;
+  margin-bottom: .75rem;
+  color: var(--color-primary);
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+h1, h2, h3 { line-height: 1.2; }
+h1 {
+  margin-bottom: 1.25rem;
+  font-size: clamp(2.1rem, 4vw, 3.55rem);
+  font-weight: 750;
+  letter-spacing: -.035em;
+}
+.hero-copy .lead { color: var(--color-muted); font-size: 1.12rem; }
+.hero-copy .lead strong { color: var(--color-primary-dark); }
+.hero-image {
+  display: block;
+  width: 100%;
+  height: clamp(280px, 38vw, 470px);
+  object-fit: cover;
+  border-radius: 1.25rem;
+  box-shadow: 0 18px 45px rgb(35 62 52 / 15%);
+}
+
+.section-title {
+  margin: 0;
+  font-size: clamp(1.65rem, 2.5vw, 2.2rem);
+  font-weight: 750;
+  letter-spacing: -.025em;
+}
+.benefits-section { background: var(--color-white); }
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  height: 100%;
+  padding: 1.25rem;
+  border: 1px solid #e4ebe6;
+  border-radius: 1rem;
+  background: #fff;
+}
+.benefit-icon {
+  flex: 0 0 58px;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  color: var(--color-primary);
+  background: #eaf2ed;
+  border-radius: 16px;
+  font-size: 1.65rem;
+}
+.benefit-item h3 { margin: 0 0 .35rem; font-size: 1.12rem; font-weight: 750; }
+.benefit-item p { margin: 0; color: var(--color-muted); }
+
+.rooms-section { background: var(--color-soft); }
+.room-card {
+  overflow: hidden;
+  border: 1px solid #e4ebe6;
+  border-radius: 1rem;
+  box-shadow: 0 8px 25px rgb(35 62 52 / 5%);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.room-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgb(35 62 52 / 10%);
+}
+.room-card .card-img-top { height: 220px; object-fit: cover; }
+.room-card .card-body { padding: 1.5rem 1.25rem; }
+.room-card .card-title { font-size: 1.25rem; font-weight: 750; }
+.room-description { min-height: 3.2em; color: var(--color-muted); }
+.room-price { color: var(--color-muted); font-size: .92rem; }
+.room-price strong { color: var(--color-primary-dark); }
+
+.booking-section { background: #eaf0eb; }
+.booking-panel {
+  padding: clamp(1.25rem, 4vw, 3rem);
+  background: var(--color-white);
+  border: 1px solid #e0e8e2;
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 35px rgb(35 62 52 / 6%);
+}
+.booking-intro { margin-top: 1.25rem; color: var(--color-muted); }
+.form-label { color: #3b4943; font-size: .94rem; font-weight: 650; }
+.form-control {
+  min-height: 46px;
+  border-color: #d5dfd8;
+  border-radius: .65rem;
+}
+textarea.form-control { min-height: 120px; }
+.form-control:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 .2rem rgb(47 102 92 / 15%);
+}
+.site-footer { color: #e9f0eb; background: #203f38; font-size: .9rem; }
+
+@media (max-width: 575.98px) {
+  .navbar { min-height: 68px; }
+  .hero-section { padding-top: 2.25rem !important; }
+  .hero-image { height: 260px; border-radius: .9rem; }
+  .benefit-item { align-items: flex-start; padding: 1rem; }
+  .room-card .card-img-top { height: 210px; }
+  .booking-panel { border-radius: .9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}
