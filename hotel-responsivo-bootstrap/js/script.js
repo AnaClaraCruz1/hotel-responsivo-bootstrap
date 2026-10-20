@@ -1,14 +1,15 @@
-// Interações do formulário de solicitação de reserva.
+// Validação e envio das solicitações de reserva para o JSON Server.
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("bookingForm");
   const entrada = document.getElementById("entrada");
   const saida = document.getElementById("saida");
   const message = document.getElementById("formMessage");
   const currentYear = document.getElementById("currentYear");
+  const submitButton = form.querySelector('button[type="submit"]');
+  const API_URL = "http://localhost:3000/reservas";
 
   currentYear.textContent = new Date().getFullYear();
 
-  // Impede selecionar uma data de entrada anterior à data atual.
   const today = new Date();
   const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
     .toISOString().split("T")[0];
@@ -24,23 +25,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   saida.addEventListener("change", () => {
-    if (entrada.value && saida.value && saida.value <= entrada.value) {
-      saida.setCustomValidity("A data de saída deve ser posterior à data de entrada.");
-    } else {
-      saida.setCustomValidity("");
-    }
+    saida.setCustomValidity(
+      entrada.value && saida.value && saida.value <= entrada.value
+        ? "A data de saída deve ser posterior à data de entrada."
+        : ""
+    );
   });
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
     event.stopPropagation();
 
-    if (entrada.value && saida.value && saida.value <= entrada.value) {
-      saida.setCustomValidity("A data de saída deve ser posterior à data de entrada.");
-    } else {
-      saida.setCustomValidity("");
-    }
-
+    saida.setCustomValidity(
+      entrada.value && saida.value && saida.value <= entrada.value
+        ? "A data de saída deve ser posterior à data de entrada."
+        : ""
+    );
     form.classList.add("was-validated");
 
     if (!form.checkValidity()) {
@@ -49,12 +49,47 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    
-    message.className = "alert alert-success mb-0";
-    message.textContent = "Solicitação validada! Esta é uma demonstração: os dados não foram enviados a um hotel.";
-    form.reset();
-    form.classList.remove("was-validated");
-    entrada.min = localToday;
-    saida.min = localToday;
+    const formData = new FormData(form);
+    const reserva = {
+      nome: String(formData.get("nome")).trim(),
+      email: String(formData.get("email")).trim(),
+      entrada: formData.get("entrada"),
+      saida: formData.get("saida"),
+      observacoes: String(formData.get("observacoes") || "").trim(),
+      adultos: Number(formData.get("adultos")),
+      criancas: Number(formData.get("criancas") || 0),
+      criadaEm: new Date().toISOString()
+    };
+
+    submitButton.disabled = true;
+    submitButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>Enviando...';
+    message.className = "alert alert-info mb-0";
+    message.textContent = "Enviando sua solicitação...";
+
+    try {
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(reserva)
+      });
+
+      if (!response.ok) {
+        throw new Error("O serviço respondeu com erro.");
+      }
+
+      await response.json();
+      message.className = "alert alert-success mb-0";
+      message.textContent = "Solicitação registrada com sucesso! Os dados foram salvos no serviço simulado.";
+      form.reset();
+      form.classList.remove("was-validated");
+      entrada.min = localToday;
+      saida.min = localToday;
+    } catch (error) {
+      message.className = "alert alert-danger mb-0";
+      message.textContent = "Não foi possível registrar a solicitação. Confira se o JSON Server está em execução na porta 3000 e tente novamente.";
+    } finally {
+      submitButton.disabled = false;
+      submitButton.innerHTML = 'Enviar solicitação <i class="bi bi-send ms-2" aria-hidden="true"></i>';
+    }
   });
 });
