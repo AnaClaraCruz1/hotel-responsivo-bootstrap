@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Demonstração acadêmica: nenhum dado é enviado a um servidor.
+    
     message.className = "alert alert-success mb-0";
     message.textContent = "Solicitação validada! Esta é uma demonstração: os dados não foram enviados a um hotel.";
     form.reset();
